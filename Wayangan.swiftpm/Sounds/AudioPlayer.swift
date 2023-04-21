@@ -13,12 +13,11 @@ class AudioPlayer: ObservableObject {
     private var audioPlayer: AVAudioPlayer?
     
     func play() {
-        guard let sound = Bundle.main.path(forResource: "BackSound.mp3", ofType: "mp3") else {
-            return
-        }
+//        guard let sound = Bundle.main.path(forResource: "BackSound", ofType: "mp3") else {
+//            return
+//        }
         
-        let url = URL(fileURLWithPath: sound)
-        
+        let url = URL(fileURLWithPath: "BackSound")
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer?.numberOfLoops = -1

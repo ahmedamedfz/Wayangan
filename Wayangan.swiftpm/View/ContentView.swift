@@ -20,9 +20,16 @@ struct ContentView: View {
             }
             .onAppear(perform: viewModel.loadMenuItems)
             .navigationBarTitle("Menu")
-            Text("Welcome \n to \n Wayangan")
-                .multilineTextAlignment(.center)
-                .onAppear {player.play()}
+            ZStack{
+                Image("RamaStand").resizable().scaledToFit()
+                Text("Welcome \n to \n Wayangan")
+                    .multilineTextAlignment(.center)
+                    .padding(10)
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 2))
+                    .onAppear {player.play()}
+            }
         }
     }
 }
